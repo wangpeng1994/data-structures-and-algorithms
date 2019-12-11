@@ -1,7 +1,5 @@
 package com.github.wangpeng1994.datastructure.queue;
 
-import java.util.Scanner;
-
 public class ArrayQueue {
     private int maxSize;
     private int front;
@@ -26,16 +24,17 @@ public class ArrayQueue {
     }
 
     // 添加数据到队列
-    public boolean add(int e) {
+    public boolean addQueue(int e) {
         if (isFull()) {
-            throw new RuntimeException("队列已满，添加失败");
+            System.out.println("队列已满，添加失败");
+            return false;
         }
         arr[++rear] = e; // rear后移，并从尾部添加数据
         return true;
     }
 
     // 获取队列数据，出队列
-    public int remove() {
+    public int getQueue() {
         if (isEmpty()) {
             throw new RuntimeException("队列为空，没有数据");
         }
@@ -54,35 +53,10 @@ public class ArrayQueue {
     }
 
     // 显示队列头部数据，但不取出
-    public int element() {
+    public int headQueue() {
         if (isEmpty()) {
             throw new RuntimeException("队列为空，没有数据");
         }
         return arr[front + 1];
-    }
-}
-
-
-class ArrayQueueDemo {
-
-    public static void main(String[] args) {
-        ArrayQueue queue = new ArrayQueue(3);
-        char key = ' '; // 从接受用户输入
-        Scanner scanner = new Scanner(System.in); // 扫描标准输入
-        boolean loop = true;
-        // 创建菜单
-        while (loop) {
-            System.out.println("s(show): 显示队列");
-            System.out.println("q(quit): 退出程序");
-            System.out.println("a(add): 添加数据到队列");
-            System.out.println("r(remove): 从队列取出数据");
-            System.out.println("e(element): 查看队列头部数据");
-            switch (key) {
-                case 's':
-                    queue.showQueue();
-                    break;
-            }
-
-        }
     }
 }
