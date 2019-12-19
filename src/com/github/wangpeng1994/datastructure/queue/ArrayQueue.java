@@ -10,7 +10,7 @@ public class ArrayQueue {
         this.maxSize = maxSize;
         arr = new int[maxSize];
         front = -1; // 指向队列头部前一个位置
-        rear = -1; // 指向对列尾
+        rear = -1; // 指向队列尾
     }
 
     // 判断队列是否满

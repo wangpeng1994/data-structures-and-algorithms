@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class ArrayQueueDemo {
 
     public static void main(String[] args) {
-        ArrayQueue queue = new ArrayQueue(3);
+        // ArrayQueue queue = new ArrayQueue(3);
+        // 测试数组模拟环形队列
+        CircleArrayQueue queue = new CircleArrayQueue(4);
         char key = ' '; // 接受用户输入
         Scanner scanner = new Scanner(System.in); // 扫描标准输入
         boolean loop = true;
         // 创建菜单
         while (loop) {
-            System.out.println("s(show): 显示队列");
+            System.out.println("\ns(show): 显示队列");
             System.out.println("e(exit): 退出程序");
             System.out.println("a(add): 添加数据到队列");
             System.out.println("g(get): 从队列取出数据");
-            System.out.println("h(head): 查看队列头部数据");
+            System.out.println("h(head): 查看队列头部数据\n");
             key = scanner.next().charAt(0); // 等待输入一个字符
             switch (key) {
                 case 's':
